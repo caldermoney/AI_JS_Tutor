@@ -1,0 +1,27 @@
+{
+  "name": "ai_js_tutor",
+  "version": "1.0.0",
+  "description": "AI JS Tutor",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caldermoney/AI_JS_Tutor.git"
+  },
+  "author": "Alpha_4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caldermoney/AI_JS_Tutor/issues"
+  },
+  "homepage": "https://github.com/caldermoney/AI_JS_Tutor#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "inquirer": "^8.2.4",
+    "langchain": "^0.0.214"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
