@@ -2,6 +2,8 @@
 // Dependencies
 const { OpenAI } = require('langchain/llms/openai');
 const inquirer = require('inquirer');
+const { PromptTemplate } = require('langchain/prompts');
+const { StructuredOutputParser } = require('langchain/output_parsers');
 require('dotenv').config();
 
 
@@ -16,6 +18,15 @@ const model = new OpenAI({
 // Calling the model
 const promptFunc = async (input) => {
     try {
+        // Instantiation of a new object called "prompt" using the "PromptTemplate" class
+        const prompt = new PromptTemplate({
+            template: "You are a javascript expert and will answer the user’s coding questions thoroughly as possible.\n{question}",
+            inputVariables: ['question'],
+        });
+        // Formats the input and calls the model
+        const promptInput = await prompt.format({
+            question: input,
+        });
         const res = await model.call(input);
         console.log(res);
     }
